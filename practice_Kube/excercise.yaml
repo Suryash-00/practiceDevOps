@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: excercise
+  labels:
+    app: excercise
+spec:
+  replicas: 2
+  selector:
+      matchLabels:
+        app: excercise
+  template:
+    metadata:
+      labels:
+        app: excercise
+    spec:
+      containers:
+        - name: excercise
+          image: index.docker.io/suryash/pythonexc:1.04
+          imagePullPolicy: Always
+          command: [ "echo", "SUCCESS" ]
+      imagePullSecrets:
+        - name: myregistrykey
