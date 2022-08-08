@@ -3,7 +3,7 @@ pipeline{
 	agent any
 	
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('docker-suryash')
 	}
 	
 	stages{
@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 			
 			steps {
-				sh 'sudo docker build -t suryash/jenkins-docker:1.0 .'
+				sh 'docker build -t suryash/jenkins-docker:1.0 .'
 			}
 		}
 		
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 			
 			steps {
-				sh 'sudo docker push suryash/jenkins-docker:1.0'
+				sh 'docker push suryash/jenkins-docker:1.0'
 			}
 		}
 	}
