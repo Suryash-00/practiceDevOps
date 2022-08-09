@@ -3,7 +3,7 @@ pipeline{
 	agent any
 	
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('docker-suryash')
+		DOCKERHUB_CREDENTIALS=credentials('my-docker')
 	}
 	
 	stages{
