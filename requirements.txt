@@ -1,3 +1,0 @@
-pytz==2019.3
-pydev==5.5.0
-pyonenssl==19.1.0
